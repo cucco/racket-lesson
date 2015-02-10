@@ -15,10 +15,12 @@
 
 (define (accept-and-handle listener)
   (define-values (in out) (tcp-accept listener))
-  (sleep 5)
-  (handle in out)
-  (close-input-port in)
-  (close-output-port out))
+  (thread
+   (lambda ()
+     (sleep 5)
+     (handle in out)
+     (close-input-port in)
+     (close-output-port out))))
 
 (define (handle in out)
   (regexp-match #rx"(\r\n|^)\r\n" in)

@@ -48,3 +48,16 @@ so write code hoge hoge...
 > (define stop (serve 5432))
 > (stop)
 ```
+
+6 Connection Thread
+
+Support multiple connection.
+write hoge hoge...
+
+```
+> (enter! "serve.rkt")
+> (define stop (serve 5432))
+```
+
+access the server drom browser twice quickly, and we recognize it.
+
