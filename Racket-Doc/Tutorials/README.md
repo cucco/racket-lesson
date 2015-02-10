@@ -13,3 +13,4 @@ So far, we can edit command line and complete symbol automatically. For example,
 > (require              ; Get it
 ```
 
+2 Set...
