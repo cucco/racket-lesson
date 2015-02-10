@@ -14,3 +14,12 @@ So far, we can edit command line and complete symbol automatically. For example,
 ```
 
 2 Set...
+
+3 Go!
+
+We use code above "2 Set ...", so start repl.
+
+```
+> (enter! "serve.rkt")
+> (go)
+```
