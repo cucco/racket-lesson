@@ -36,3 +36,15 @@ and exec below in console.
 > (serve 5555)
 ```
 
+5 Server Thread
+
+Once we stop server with Ctrl-C, we can't reuse same port.
+so write code hoge hoge...
+
+```
+> (enter! "serve.rkt")
+> (define stop (serve 5432))
+> (stop)
+> (define stop (serve 5432))
+> (stop)
+```
