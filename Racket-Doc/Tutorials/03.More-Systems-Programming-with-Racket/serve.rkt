@@ -15,6 +15,7 @@
 
 (define (accept-and-handle listener)
   (define-values (in out) (tcp-accept listener))
+  (sleep 5)
   (handle in out)
   (close-input-port in)
   (close-output-port out))
@@ -23,4 +24,8 @@
   (regexp-match #rx"(\r\n|^)\r\n" in)
   (display "HTTP/1.0 200 Okey\r\n" out)
   (display "Server: k\r\nContent-Type: text:html\r\n\r\n" out)
-  (display "<html><body>Hello, world!</body></html>" out))
+  (let [(num-str (format "~a" (current-seconds)))]
+    (display
+     (string-append
+      "<html><body>Hello, world![" num-str "]</body></html>")
+     out)))
