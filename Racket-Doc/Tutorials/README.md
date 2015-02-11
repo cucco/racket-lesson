@@ -61,3 +61,18 @@ write hoge hoge...
 
 access the server drom browser twice quickly, and we recognize it.
 
+7 Terminating Connections
+
+For closing resources, write code hoge hoge...
+
+```
+-> (enter! "serve.rkt")
+"serve.rkt"> (define stop (serve 8081))
+"serve.rkt"> (define-values (cin cout) (tcp-connect "localhost" 8081))
+"serve.rkt"> (read-line cin)
+#<eof>
+"serve.rkt"> (define-values (cin2 cout2) (tcp-connect "localhost" 8081))
+"serve.rkt"> (stop)
+"serve.rkt"> (read-line cin2)
+#<eof>
+```
